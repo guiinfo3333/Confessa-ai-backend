@@ -10,19 +10,29 @@ import { ParoquiaController } from './controllers/paroquiacontroller'
 const cidadeController = new CidadeController()
 const enderecoController = new EnderecoController()
 const estadoController = new EstadoController()
-const horario_confissao_Controller = new Horario_Confissao_Controller()
-const horario_missa_Controller = new Horario_Missa_Controller()
+const horarioConfissaoController = new Horario_Confissao_Controller()
+const horarioMissaController = new Horario_Missa_Controller()
 const paroquiaController = new ParoquiaController()
 
 const routes = express.Router()
 
-///cidade
+//cidade
 routes.get('/cidades', cidadeController.index)
-routes.get('/enderecos', cidadeController.index)
-routes.get('/cidades', cidadeController.index)
-routes.get('/cidades', cidadeController.index)
-routes.get('/cidades', cidadeController.index)
-routes.get('/cidades', cidadeController.index)
+
+//endereco
+routes.get('/enderecos', enderecoController.index)
+
+//estados
+routes.get('/estados', estadoController.index)
+
+//horarios_confissao
+routes.get('/horariosconfissao', horarioConfissaoController.index)
+
+//horarios_missa
+routes.get('/horariosmissa', horarioMissaController.index)
+
+//horarios_paroquia
+routes.get('/paroquias', paroquiaController.index)
 
 
 export default routes;
